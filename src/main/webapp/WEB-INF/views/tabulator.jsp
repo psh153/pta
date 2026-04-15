@@ -13,6 +13,9 @@ $(document).ready(function () {
 	
 	var table = new Tabulator('#example-table', {
 	 	data:tabledata,
+	 	width: "100%",
+	 	height:"311px",
+	 	rowHeight: 30, // row별 cell높이
 	 	layout:"fitColumns",
 	 	columns:[
 		 	{title:"Name", field:"name", width:150},
