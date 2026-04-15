@@ -24,4 +24,9 @@ public class ExampleController {
     	model.addAttribute("test", testService.dbCheck());
     	return "main2";
     }
+    @RequestMapping("/list")
+    public String tabulator(Model model){
+    	
+    	return "tabulator";
+    }
 }
