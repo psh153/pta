@@ -8,8 +8,13 @@
     <!-- 기본 레이아웃 -->
     <definition name="layout" template="/WEB-INF/views/layout.jsp" />
 
-    <definition name="*" extends="layout">
-        <put-attribute name="body" value="/WEB-INF/views/{1}.jsp"/>
+    
+    <definition name="program" extends="layout">
+        <put-attribute name="body" value="/WEB-INF/views/program/tabulator.jsp"/>
+    </definition>
+    
+    <definition name="program.login" extends="program">
+        <put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
     </definition>
 
 </tiles-definitions>
