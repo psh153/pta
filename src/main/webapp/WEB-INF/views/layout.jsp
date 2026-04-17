@@ -5,7 +5,8 @@
 
 <html>
 	<head>
-	    <title>Tiles Layout</title>
+	    <title>pta</title>
+	    <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon.png">
 	    <script src="/resources/js/jquery-4.0.0.min.js"></script>
 	    <script src="/resources/js/jquery-ui.js"></script>
 	    <script type="text/javascript" src="/resources/js/tabulator/tabulator.js"></script>
