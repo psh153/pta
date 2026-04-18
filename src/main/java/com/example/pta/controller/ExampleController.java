@@ -18,4 +18,14 @@ public class ExampleController {
     public String tabulator(Model model){
     		return "program";
     }
+    
+    @RequestMapping("/main")
+	public String main(Model model){
+		return "program.main";
+	}
+	
+	@RequestMapping("/detail")
+	public String detail(Model model){
+		return "program.detail";
+	}
 }

@@ -10,11 +10,20 @@
 
     
     <definition name="program" extends="layout">
-        <put-attribute name="body" value="/WEB-INF/views/program/tabulator.jsp"/>
+        <put-attribute name="body"/>
     </definition>
     
-    <definition name="program.login" extends="program">
+    <definition name="program.login" extends="layout">
         <put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
+    </definition>
+    
+    <definition name="program.main" extends="layout">
+        <put-attribute name="body" value="/WEB-INF/views/main.jsp"/>
+    </definition>
+    
+    <definition name="program.detail" extends="layout">
+    		<put-attribute name="sidebar" value="/WEB-INF/views/main.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/program/detail.jsp"/>
     </definition>
 
 </tiles-definitions>
