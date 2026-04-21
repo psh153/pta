@@ -5,14 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.pta.service.TestService;
+import com.example.pta.repository.CommonDao;
 
 @RequestMapping("/service")
 @Controller
 public class ExampleController {
 
     @Autowired
-    private TestService testService;
+    private CommonDao commonDao;
 
     @RequestMapping("/list")
     public String tabulator(Model model){

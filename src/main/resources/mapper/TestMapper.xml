@@ -3,10 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.pta.mapper.TestMapper">
+<mapper namespace="TestMapper">
 
     <select id="dbCheck" resultType="string">
         SELECT T FROM TEST WHERE T = 'a' 
+    </select>
+    
+    <select id="test1" resultType="map">
+        SELECT 'test'  
+    </select>
+    
+    <select id="test2" resultType="map">
+        SELECT t, #{test1} as t1, #{test2} as t2 FROM TEST
     </select>
 
 </mapper>
