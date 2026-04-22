@@ -21,6 +21,24 @@ $(function() {
 		    }
 		});	
 	});
+	
+	$("#add").on("click", function(){
+		$.ajax({
+		    url: "/common/event/call",
+		    method: "POST",
+		    contentType: "application/json",
+		    data : JSON.stringify({
+		    			sqlId:"TestMapper.callProc",
+		    			parameter:{p_t:"test"}
+		    }),
+		    success: function(res) {
+		        console.log("res",res);
+		    },
+		    error: function(err) {
+		        console.error(err);
+		    }
+		});	
+	});
 });
 </script>
 <div class="content">
@@ -32,7 +50,7 @@ $(function() {
     </div>
     <div class="grid-box">
         <div class="grid-header">
-	        <button class="btn-sm">추가</button>
+	        <button id="add" class="btn-sm">추가</button>
 	    </div>
         <div class="grid">그리드</div>
     </div>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.pta.service.EventService;
 
+@SuppressWarnings("unchecked")
 @RestController
 @RequestMapping("/common/event")
 public class EventController {
@@ -21,7 +22,6 @@ public class EventController {
         this.eventService = eventService;
     }
 
-    @SuppressWarnings("unchecked")
 	@PostMapping("/select")
     public Object getSelectList(@RequestBody Map<String, Object> parameter) {
     		String sqlId = (String)parameter.get("sqlId");
@@ -31,12 +31,17 @@ public class EventController {
     }
 
     @PostMapping("/call")
-    public Object callEvent(@RequestParam String sqlId, @RequestParam Map<String, Object> parameter) {
-        return eventService.callEvent(sqlId, parameter);
+    public Object callEvent(@RequestBody Map<String, Object> parameter) {
+    		String sqlId = (String)parameter.get("sqlId");
+		Map<String, Object> map = (Map<String, Object>) parameter.get("parameter");
+		
+        return eventService.callEvent(sqlId, map);
     }
 
     @PostMapping("/batch")
-    public Object batchEvent(@RequestParam String sqlId, @RequestParam List<Map<String, Object>> parameters) {
+    public Object batchEvent(@RequestParam List<Map<String, Object>> parameters) {
+    		String sqlId = (String)parameters.get(0).get("sqlId");
+//		Map<String, Object> map = (Map<String, Object>) parameters.get("parameter");
         return eventService.batchEvent(sqlId, parameters);
     }
 }

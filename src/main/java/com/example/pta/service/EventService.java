@@ -39,7 +39,9 @@ public class EventService {
 		 
 		 commonDao.updateEvent(sqlId, parameter);
 		 
-		 result.put("result", "OK");
+		 String msg = (String) parameter.get("out1");
+
+		 result.put("result", msg);
 		 
 		 return result; 
 	 }
