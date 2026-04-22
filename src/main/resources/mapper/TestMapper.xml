@@ -16,5 +16,17 @@
     <select id="test2" resultType="map">
         SELECT t, #{test1} as t1, #{test2} as t2 FROM TEST
     </select>
+    
+    <insert id="test3" parameterType="map">
+	    INSERT INTO test (t)
+	    VALUES (#{t})
+	</insert>
+	
+	<update id="callProc" parameterType="map" statementType="CALLABLE">
+	    CALL ztemp_insert(
+	    		#{p_t, mode=IN, jdbcType=VARCHAR},
+	    		#{out1, mode=OUT, jdbcType=VARCHAR}
+	    		)
+	</update>
 
 </mapper>
